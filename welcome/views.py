@@ -9,7 +9,6 @@ from .models import PageView
 # Create your views here.
 
 def index(request):
-    print request
     hostname = os.getenv('HOSTNAME', 'unknown')
     PageView.objects.create(hostname=hostname)
 
@@ -27,5 +26,4 @@ def openNg2Project(request):
     })
 
 def openMusicApp(request):
-    print 's'
     return render(request, 'ng2/musicApp/index.html', {})
